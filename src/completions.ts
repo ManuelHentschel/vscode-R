@@ -25,6 +25,12 @@ const roxygenTagCompletionItems = [
     'title', 'usage'
 ].map((x: string) => new vscode.CompletionItem(`${x} `));
 
+{
+    const tmp = new vscode.CompletionItem('internal');
+    tmp.insertText = 'keywords internal';
+    tmp.detail = 'Inserts `@keywords internal`';
+    roxygenTagCompletionItems.push(tmp);
+}
 
 export class HoverProvider implements vscode.HoverProvider {
     provideHover(document: vscode.TextDocument, position: vscode.Position): vscode.Hover {
