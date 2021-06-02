@@ -8,6 +8,8 @@ dir_watcher <- Sys.getenv("VSCODE_WATCHER_DIR", file.path(homedir, ".vscode-R"))
 request_file <- file.path(dir_watcher, "request.log")
 request_lock_file <- file.path(dir_watcher, "request.lock")
 
+source(file.path(dir_init, 'hoverPlot.R'), local = TRUE)
+
 if (is.null(getOption("help_type"))) {
   options(help_type = "html")
 }

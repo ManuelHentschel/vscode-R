@@ -116,6 +116,8 @@ function focusPlot(plotId: string): void {
   smallPlot.classList.add('active');
   
   largePlotDiv.innerHTML = smallPlot.innerHTML;
+  
+  makeHover(largePlotDiv.querySelector('svg')!);
 }
 
 function updatePlot(plt: Plot): void {
@@ -131,6 +133,7 @@ function updatePlot(plt: Plot): void {
   
   if(smallPlots[ind].classList.contains('active')){
     largePlotDiv.innerHTML = plt.svg;
+    makeHover(largePlotDiv.querySelector('svg')!);
   }
 }
 
@@ -178,6 +181,7 @@ function toggleMultirow(useMultirow: boolean): void {
 window.onload = () => {
   largePlotDiv.style.height = `${largeSvg.clientHeight}px`;
   postResizeMessage(true);
+  makeHover(largePlotDiv.querySelector('svg')!);
 };
 
 

@@ -110,3 +110,8 @@ a.hidePlot {
     color: var(--vscode-errorForeground);
 }
 
+
+svg .hasHover {
+    pointer-events: all !important;
+    fill: red !important;
+}

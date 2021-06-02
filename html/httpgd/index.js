@@ -87,6 +87,7 @@ function focusPlot(plotId) {
     const smallPlot = smallPlots[ind];
     smallPlot.classList.add('active');
     largePlotDiv.innerHTML = smallPlot.innerHTML;
+    makeHover(largePlotDiv.querySelector('svg'));
 }
 function updatePlot(plt) {
     const smallPlots = getSmallPlots();
@@ -97,6 +98,7 @@ function updatePlot(plt) {
     smallPlots[ind].innerHTML = plt.svg;
     if (smallPlots[ind].classList.contains('active')) {
         largePlotDiv.innerHTML = plt.svg;
+        makeHover(largePlotDiv.querySelector('svg'));
     }
 }
 function hidePlot(plotId) {
@@ -136,6 +138,7 @@ function toggleMultirow(useMultirow) {
 window.onload = () => {
     largePlotDiv.style.height = `${largeSvg.clientHeight}px`;
     postResizeMessage(true);
+    makeHover(largePlotDiv.querySelector('svg'));
 };
 ////
 // Resize bar
