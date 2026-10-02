@@ -22,7 +22,7 @@ import {
     substitutePathVariables,
 } from './rPathResolver';
 
-export function config(resource?: vscode.Uri): vscode.WorkspaceConfiguration {
+export function config(resource?: vscode.ConfigurationScope): vscode.WorkspaceConfiguration {
     return vscode.workspace.getConfiguration('r', resource);
 }
 

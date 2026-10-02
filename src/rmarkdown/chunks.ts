@@ -395,9 +395,9 @@ export function selectCurrentChunk(chunks: RMarkdownChunk[] = _getChunks(),
     );
 }
 
-export function getCodeLenses(chunks: RMarkdownChunk[], token: vscode.CancellationToken): vscode.CodeLens[] {
+export function getCodeLenses(chunks: RMarkdownChunk[], token: vscode.CancellationToken, document?: vscode.TextDocument): vscode.CodeLens[] {
 
-    const enabledCodeLens = config().get<boolean>('rmarkdown.enableCodeLens');
+    const enabledCodeLens = config(document).get<boolean>('rmarkdown.enableCodeLens');
     if (enabledCodeLens === false) {
         return [];
     }
